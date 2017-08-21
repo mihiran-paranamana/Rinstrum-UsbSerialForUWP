@@ -1,0 +1,7 @@
+App.xbf
+MainPage.xbf
+Scenarios\Scenario1_ConnectDisconnect.xbf
+Scenarios\Scenario2_ConfigureDevice.xbf
+Scenarios\Scenario3_ReadWrite.xbf
+Scenarios\Scenario4_Events.xbf
+Styles\Styles.xbf
