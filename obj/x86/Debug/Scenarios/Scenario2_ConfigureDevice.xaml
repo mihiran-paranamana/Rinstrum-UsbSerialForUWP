@@ -33,38 +33,38 @@
             <ScrollViewer x:ConnectionId='1' x:Name="ConfigureDeviceScrollViewer" Grid.Row="1" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Margin="0,0,0,100">
                 <StackPanel Orientation="Vertical" Margin="0,10,0,0" Grid.Row="1">
 
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Carrier Detect State = "/>
                         <TextBlock x:ConnectionId='21' x:Name="CarrierDetectStateValue" Text=" Not Set"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Data Set Ready = "/>
                         <TextBlock x:ConnectionId='20' x:Name="DataSetReadyStateValue" Text=" Not Set"/>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Break State Signal : "/>
                         <TextBlock x:ConnectionId='19' x:Name="BreakStateSignalValue" Text=" Not Set"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1" Visibility="Collapsed">
                         <ToggleSwitch x:ConnectionId='18' x:Name="BreakStateSignalToggleSwitch" OnContent="On" OffContent="Off"                                               >
                         </ToggleSwitch>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Data Terminal Ready Enabled = "/>
                         <TextBlock x:ConnectionId='17' x:Name="DataTerminalReadyEnabledValue" Text=" Not Set"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1" Visibility="Collapsed">
                         <ToggleSwitch x:ConnectionId='16' x:Name="DataTerminalReadyEnabledToggleSwitch" OnContent="On" OffContent="Off"                                                       >
                         </ToggleSwitch>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Request To Send Enabled = "/>
                         <TextBlock x:ConnectionId='15' x:Name="RequestToSendEnabledValue" Text=" Not Set"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1" Visibility="Collapsed">
                         <ToggleSwitch x:ConnectionId='14' x:Name="RequestToSendEnabledToggleSwitch" OnContent="On" OffContent="Off"                                                   >
                         </ToggleSwitch>
                     </StackPanel>
@@ -77,18 +77,22 @@
                         <TextBox x:ConnectionId='11' x:Name="BaudRateInputValue" Text="Enter Baud Rate" Height="30" InputScope="Number"/>
                         <Button x:ConnectionId='12' x:Name="BaudRateSetButton" Height="30" Content="SET"                                />
                     </StackPanel>
-                    
+
                     <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
-                        <TextBlock Text="Parity = "/>
-                        <TextBlock x:ConnectionId='10' x:Name="ParityValue" Text=" Not Set"/>
+                        <TextBlock Text="Data Bits = "/>
+                        <TextBlock x:ConnectionId='10' x:Name="DataBitsValue" Text=" Not Set"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
-                        <ComboBox x:ConnectionId='9' x:Name="ParityComboBox"                                                    >
-                            <x:String>None</x:String>
-                            <x:String>Even</x:String>
-                            <x:String>Odd</x:String>
-                            <x:String>Mark</x:String>
-                            <x:String>Space</x:String>
+                        <ComboBox x:ConnectionId='9' x:Name="DataBitsComboBox"                                                      >
+                            <x:Int32>0</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>4</x:Int32>
+                            <x:Int32>5</x:Int32>
+                            <x:Int32>6</x:Int32>
+                            <x:Int32>7</x:Int32>
+                            <x:Int32>8</x:Int32>
                         </ComboBox>
                     </StackPanel>
 
@@ -105,37 +109,31 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
-                        <TextBlock Text="Hand Shake = "/>
-                        <TextBlock x:ConnectionId='6' x:Name="HandShakeValue" Text=" Not Set"/>
+                        <TextBlock Text="Parity = "/>
+                        <TextBlock x:ConnectionId='6' x:Name="ParityValue" Text=" Not Set"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
-                        <ComboBox x:ConnectionId='5' x:Name="HandShakeComboBox"                                                      >
+                        <ComboBox x:ConnectionId='5' x:Name="ParityComboBox"                                                    >
+                            <x:String>None</x:String>
+                            <x:String>Even</x:String>
+                            <x:String>Odd</x:String>
+                            <x:String>Mark</x:String>
+                            <x:String>Space</x:String>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                        <TextBlock Text="Hand Shake = "/>
+                        <TextBlock x:ConnectionId='4' x:Name="HandShakeValue" Text=" Not Set"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
+                        <ComboBox x:ConnectionId='3' x:Name="HandShakeComboBox"                                                      >
                             <x:String>None</x:String>
                             <x:String>RequestToSend</x:String>
                             <x:String>XOnXOff</x:String>
                             <x:String>RequestToSendXOnXOff</x:String>
                         </ComboBox>
                     </StackPanel>
-
-
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
-                        <TextBlock Text="Data Bits = "/>
-                        <TextBlock x:ConnectionId='4' x:Name="DataBitsValue" Text=" Not Set"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
-                        <ComboBox x:ConnectionId='3' x:Name="DataBitsComboBox"                                                      >
-                            <x:Int32>0</x:Int32>
-                            <x:Int32>1</x:Int32>
-                            <x:Int32>2</x:Int32>
-                            <x:Int32>3</x:Int32>
-                            <x:Int32>4</x:Int32>
-                            <x:Int32>5</x:Int32>
-                            <x:Int32>6</x:Int32>
-                            <x:Int32>7</x:Int32>
-                            <x:Int32>8</x:Int32>
-                        </ComboBox>
-                    </StackPanel>
-
 
                 </StackPanel>
 

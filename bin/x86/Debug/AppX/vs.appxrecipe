@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\Student\mihiran\Xamarin-UsbSerialForUWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-21T10:15:02.688</Modified>
+      <Modified>2017-08-22T11:37:29.794</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Student\mihiran\Xamarin-UsbSerialForUWP\bin\x86\Debug\CustomSerialDeviceAccess.exe">
       <PackagePath>entrypoint\CustomSerialDeviceAccess.exe</PackagePath>
-      <Modified>2017-08-21T10:15:01.374</Modified>
+      <Modified>2017-08-22T11:37:28.984</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Student\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -489,7 +489,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Student\mihiran\Xamarin-UsbSerialForUWP\bin\x86\Debug\CustomSerialDeviceAccess.xr.xml">
       <PackagePath>CustomSerialDeviceAccess.xr.xml</PackagePath>
-      <Modified>2017-08-21T06:16:17.787</Modified>
+      <Modified>2017-08-22T11:37:28.651</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -498,11 +498,11 @@
     <AppxPackagedFile Include="C:\Users\Student\mihiran\Xamarin-UsbSerialForUWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-21T10:15:02.376</Modified>
+      <Modified>2017-08-22T11:37:29.596</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Student\mihiran\Xamarin-UsbSerialForUWP\bin\x86\Debug\Core\CustomSerialDeviceAccess.exe">
       <PackagePath>CustomSerialDeviceAccess.exe</PackagePath>
-      <Modified>2017-08-21T10:15:02.657</Modified>
+      <Modified>2017-08-22T11:37:29.778</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

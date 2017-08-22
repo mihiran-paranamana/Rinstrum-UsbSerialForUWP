@@ -18,13 +18,13 @@ namespace SDKTemplate
 {
     public partial class MainPage : Page
     {
-        public const string FEATURE_NAME = "CustomSerialDeviceAccess";
+        public const string FEATURE_NAME = "Usb Serial for UWP";
 
         List<Scenario> scenarios = new List<Scenario>
         {
-            new Scenario() { Title="Connect/Disconnect", ClassType=typeof(Scenario1_ConnectDisconnect)},
-            new Scenario() { Title="Configure Device", ClassType=typeof(Scenario2_ConfigureDevice)},
-            new Scenario() { Title="Read/Write", ClassType=typeof(Scenario3_ReadWrite)},
+            new Scenario() { Title="Connection", ClassType=typeof(Scenario1_ConnectDisconnect)},
+            new Scenario() { Title="Terminal", ClassType=typeof(Scenario3_ReadWrite)},
+            new Scenario() { Title="Configuration", ClassType=typeof(Scenario2_ConfigureDevice)},
             new Scenario() { Title="Events", ClassType=typeof(Scenario4_Events)}
         };
     }

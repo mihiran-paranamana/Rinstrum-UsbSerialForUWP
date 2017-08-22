@@ -33,38 +33,38 @@
             <ScrollViewer x:Name="ConfigureDeviceScrollViewer" Grid.Row="1" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Margin="0,0,0,100">
                 <StackPanel Orientation="Vertical" Margin="0,10,0,0" Grid.Row="1">
 
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Carrier Detect State = "/>
                         <TextBlock x:Name="CarrierDetectStateValue" Text=" Not Set"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Data Set Ready = "/>
                         <TextBlock x:Name="DataSetReadyStateValue" Text=" Not Set"/>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Break State Signal : "/>
                         <TextBlock x:Name="BreakStateSignalValue" Text=" Not Set"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1" Visibility="Collapsed">
                         <ToggleSwitch x:Name="BreakStateSignalToggleSwitch" OnContent="On" OffContent="Off" Toggled="BreakStateSignalToggleSwitch_Toggled">
                         </ToggleSwitch>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Data Terminal Ready Enabled = "/>
                         <TextBlock x:Name="DataTerminalReadyEnabledValue" Text=" Not Set"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1" Visibility="Collapsed">
                         <ToggleSwitch x:Name="DataTerminalReadyEnabledToggleSwitch" OnContent="On" OffContent="Off" Toggled="DataTerminalReadyEnabledToggleSwitch_Toggled">
                         </ToggleSwitch>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Request To Send Enabled = "/>
                         <TextBlock x:Name="RequestToSendEnabledValue" Text=" Not Set"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1" Visibility="Collapsed">
                         <ToggleSwitch x:Name="RequestToSendEnabledToggleSwitch" OnContent="On" OffContent="Off" Toggled="RequestToSendEnabledToggleSwitch_Toggled">
                         </ToggleSwitch>
                     </StackPanel>
@@ -77,46 +77,6 @@
                         <TextBox x:Name="BaudRateInputValue" Text="Enter Baud Rate" Height="30" InputScope="Number"/>
                         <Button x:Name="BaudRateSetButton" Height="30" Content="SET" Click="BaudRateSetButton_Click"/>
                     </StackPanel>
-                    
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
-                        <TextBlock Text="Parity = "/>
-                        <TextBlock x:Name="ParityValue" Text=" Not Set"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
-                        <ComboBox x:Name="ParityComboBox" SelectionChanged="ParityComboBox_SelectionChanged" >
-                            <x:String>None</x:String>
-                            <x:String>Even</x:String>
-                            <x:String>Odd</x:String>
-                            <x:String>Mark</x:String>
-                            <x:String>Space</x:String>
-                        </ComboBox>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
-                        <TextBlock Text="Stop Bit Count = "/>
-                        <TextBlock x:Name="StopBitCountValue" Text=" Not Set"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
-                        <ComboBox x:Name="StopBitCountComboBox" SelectionChanged="StopBitCountComboBox_SelectionChanged" >
-                            <x:String>One</x:String>
-                            <x:String>OnePointFive</x:String>
-                            <x:String>Two</x:String>
-                        </ComboBox>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
-                        <TextBlock Text="Hand Shake = "/>
-                        <TextBlock x:Name="HandShakeValue" Text=" Not Set"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
-                        <ComboBox x:Name="HandShakeComboBox" SelectionChanged="HandShakeComboBox_SelectionChanged">
-                            <x:String>None</x:String>
-                            <x:String>RequestToSend</x:String>
-                            <x:String>XOnXOff</x:String>
-                            <x:String>RequestToSendXOnXOff</x:String>
-                        </ComboBox>
-                    </StackPanel>
-
 
                     <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
                         <TextBlock Text="Data Bits = "/>
@@ -136,6 +96,44 @@
                         </ComboBox>
                     </StackPanel>
 
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                        <TextBlock Text="Stop Bit Count = "/>
+                        <TextBlock x:Name="StopBitCountValue" Text=" Not Set"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
+                        <ComboBox x:Name="StopBitCountComboBox" SelectionChanged="StopBitCountComboBox_SelectionChanged" >
+                            <x:String>One</x:String>
+                            <x:String>OnePointFive</x:String>
+                            <x:String>Two</x:String>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                        <TextBlock Text="Parity = "/>
+                        <TextBlock x:Name="ParityValue" Text=" Not Set"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
+                        <ComboBox x:Name="ParityComboBox" SelectionChanged="ParityComboBox_SelectionChanged" >
+                            <x:String>None</x:String>
+                            <x:String>Even</x:String>
+                            <x:String>Odd</x:String>
+                            <x:String>Mark</x:String>
+                            <x:String>Space</x:String>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10,30,0,0" Grid.Row="1">
+                        <TextBlock Text="Hand Shake = "/>
+                        <TextBlock x:Name="HandShakeValue" Text=" Not Set"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
+                        <ComboBox x:Name="HandShakeComboBox" SelectionChanged="HandShakeComboBox_SelectionChanged">
+                            <x:String>None</x:String>
+                            <x:String>RequestToSend</x:String>
+                            <x:String>XOnXOff</x:String>
+                            <x:String>RequestToSendXOnXOff</x:String>
+                        </ComboBox>
+                    </StackPanel>
 
                 </StackPanel>
 

@@ -40,7 +40,7 @@
                     <Button x:Name="ButtonDisconnectFromDevice"  Content="Disconnect from device" Margin="0,0,10,0" Click="DisconnectFromDevice_Click"/>
                 </StackPanel>
                 <TextBlock Text="Select a Serial Device:"/>
-                <ListBox x:Name="ConnectDevices" ItemsSource="{Binding Source={StaticResource DeviceListSource}}"  Height="250" Background="Gray">
+                <ListBox x:Name="ConnectDevices" ItemsSource="{Binding Source={StaticResource DeviceListSource}}" Background="Gray">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding InstanceId}"/>
