@@ -27,7 +27,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <StackPanel Margin="0,0,0,10">
-                <TextBlock Text="Communicate with Serial Device" Style="{StaticResource SampleHeaderTextStyle}"/>
+                <TextBlock Text="Serial Terminal" Style="{StaticResource SampleHeaderTextStyle}"/>
             </StackPanel>
 
             <ScrollViewer x:ConnectionId='1' x:Name="ReadWriteScollViewer" Grid.Row="1" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" Margin="0,0,0,100">
@@ -35,7 +35,7 @@
                 <StackPanel Orientation="Vertical" Margin="10,0,0,0" Grid.Row="1">
 
                     <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
-                        <TextBox x:ConnectionId='21' x:Name="WriteBytesInputValue" Text="Enter text to write" 
+                        <TextBox x:ConnectionId='22' x:Name="WriteBytesInputValue" Text="Enter text to write" 
                                  Height="30" 
                                  MinWidth="238"
                                  MaxWidth="238"
@@ -47,17 +47,19 @@
                     </StackPanel>
                     
                     <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Grid.Row="1">
-                        <Button x:ConnectionId='19' x:Name="WriteButton" Margin="10,1,0,0" Height="30" Content="WRITE BYTES"                           VerticalAlignment="Stretch"/>
-                        <Button x:ConnectionId='20' x:Name="WriteCancelButton" IsEnabled="False" Margin="10,1,0,0" Height="30" Content="CANCEL WRITE"                                 VerticalAlignment="Stretch"/>
+                        <Button x:ConnectionId='18' x:Name="WriteButton" Margin="10,1,0,0" Height="30" Content="SEND"                          />
+                        <Button x:ConnectionId='19' x:Name="ReadButton" Margin="10,1,0,0" Height="30" Content="READ"                         />
+                        <Button x:ConnectionId='20' x:Name="ClearButton" Margin="10,1,0,0" Height="30" Content="CLEAR"                          />
+                        <Button x:ConnectionId='21' x:Name="WriteCancelButton" IsEnabled="False" Margin="10,1,0,0" Height="30" Content="CANCEL WRITE"                                 VerticalAlignment="Stretch" Visibility="Collapsed"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Written bytes are displayed here: " Margin="10,30,0,0" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left"></TextBlock>
-                        <TextBlock x:ConnectionId='18' x:Name="WriteBytesCounterValue" Text="0 bytes" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" ></TextBlock>
+                        <TextBlock x:ConnectionId='17' x:Name="WriteBytesCounterValue" Text="0 bytes" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" ></TextBlock>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Grid.Row="1" Height="100">
+                    <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Grid.Row="1">
 
-                        <Border x:ConnectionId='15' x:Name="WriteByteBorder" BorderBrush="Gray" Margin="10,0,0,0" MinWidth="30" BorderThickness="0 2" Grid.Row="0" HorizontalAlignment="Stretch">
-                            <ScrollViewer x:ConnectionId='16' 
+                        <Border x:ConnectionId='14' x:Name="WriteByteBorder" BorderBrush="Gray" Margin="10,0,0,0" MinWidth="30" BorderThickness="0 2" Grid.Row="0" HorizontalAlignment="Stretch">
+                            <ScrollViewer x:ConnectionId='15' 
                                 x:Name="WriteScroller" 
                                 Grid.Row="1" 
                                 VerticalScrollMode="Enabled" 
@@ -65,7 +67,7 @@
                                 MinWidth="250"
                                 MinHeight="100">
 
-                                <TextBlock x:ConnectionId='17' x:Name="WriteBytesTextBlock" TextWrapping="Wrap"
+                                <TextBlock x:ConnectionId='16' x:Name="WriteBytesTextBlock" TextWrapping="Wrap"
                                        MaxWidth="{Binding ElementName=WriteScroller, Path=ActualWidth}"
                                 />
                             </ScrollViewer>
@@ -73,14 +75,13 @@
 
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Grid.Row="1">
-                        <Button x:ConnectionId='13' x:Name="ReadButton" Margin="10,30,0,0" Height="30" Content="READ BYTES"                         />
-                        <Button x:ConnectionId='14' x:Name="ReadCancelButton" IsEnabled="False" Margin="10,30,0,0" Height="30" Content="CANCEL READ"                               />
+                        <Button x:ConnectionId='13' x:Name="ReadCancelButton" IsEnabled="False" Margin="10,30,0,0" Height="30" Content="CANCEL READ"                                Visibility="Collapsed"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Read bytes are displayed here: " Margin="10,30,0,0" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left"></TextBlock>
                         <TextBlock x:ConnectionId='12' x:Name="ReadBytesCounterValue" Text="0 bytes" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" ></TextBlock>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Grid.Row="1" Height="100">
+                    <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Grid.Row="1" Height="100" Visibility="Collapsed">
 
                         <Border x:ConnectionId='9' x:Name="ReadByteBorder" BorderBrush="Gray" Margin="10,0,0,0" MinWidth="30" BorderThickness="0 2" Grid.Row="0" HorizontalAlignment="Stretch">
                             <ScrollViewer x:ConnectionId='10' 
@@ -99,20 +100,20 @@
 
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Write Timeout (ms) =" Margin="10,30,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
                         <TextBlock x:ConnectionId='8' x:Name="WriteTimeoutValue" Text=" Not Set" Margin="10,10,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBox x:ConnectionId='6' x:Name="WriteTimeoutInputValue" Text="Enter Write Timeout" Height="30" Margin="10,10,0,0" InputScope="Number"/>
                         <Button x:ConnectionId='7' x:Name="WriteTimeoutButton" Height="30" Content="SET"                                  Margin="10,10,0,0" />
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBlock Text="Read Timeout (ms) =" Margin="10,30,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
                         <TextBlock x:ConnectionId='5' x:Name="ReadTimeoutValue" Text=" Not Set" Margin="10,10,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0" Grid.Row="1" Visibility="Collapsed">
                         <TextBox x:ConnectionId='3' x:Name="ReadTimeoutInputValue" Text="Enter Read Timeout" Height="30" Margin="10,10,0,0" InputScope="Number"/>
                         <Button x:ConnectionId='4' x:Name="ReadTimeoutButton" Height="30" Content="SET"                                 Margin="10,10,0,0"/>
                     </StackPanel>

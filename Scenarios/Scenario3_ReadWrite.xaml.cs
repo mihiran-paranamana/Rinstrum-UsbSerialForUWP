@@ -141,6 +141,7 @@ namespace CustomSerialDeviceAccess
 
         private void UpdateWriteTimeoutView()
         {
+            EventHandlerForDevice.Current.Device.WriteTimeout = new System.TimeSpan(1000 * 10000);
             WriteTimeoutValue.Text = EventHandlerForDevice.Current.Device.WriteTimeout.TotalMilliseconds.ToString();
         }
 
@@ -151,6 +152,7 @@ namespace CustomSerialDeviceAccess
 
         private void UpdateReadTimeoutView()
         {
+            EventHandlerForDevice.Current.Device.ReadTimeout = new System.TimeSpan(1000 * 10000);
             ReadTimeoutValue.Text = EventHandlerForDevice.Current.Device.ReadTimeout.TotalMilliseconds.ToString();
         }
 
@@ -240,6 +242,10 @@ namespace CustomSerialDeviceAccess
                     DataWriteObject = null;
 
                     UpdateWriteButtonStates();
+                    if (!IsPerformingRead())
+                    {
+                        ReadButton_Click(new object(), new RoutedEventArgs());
+                    }
                 }
             }
             else
@@ -310,12 +316,12 @@ namespace CustomSerialDeviceAccess
             UInt32 bytesRead = await loadAsyncTask;
             if (bytesRead > 0)
             {
-                ReadBytesTextBlock.Text += DataReaderObject.ReadString(bytesRead);
+                WriteBytesTextBlock.Text += DataReaderObject.ReadString(bytesRead);
                 ReadBytesCounter += bytesRead;
                 UpdateReadBytesCounterView();
 
             }
-            rootPage.NotifyUser("Read completed - " + bytesRead.ToString() + " bytes were read", NotifyType.StatusMessage);
+            rootPage.NotifyUser("Read completed", NotifyType.StatusMessage);
         }
 
         private async Task WriteAsync(CancellationToken cancellationToken)
@@ -325,11 +331,12 @@ namespace CustomSerialDeviceAccess
 
             if ((WriteBytesAvailable) && (WriteBytesInputValue.Text.Length != 0))
             {
-                char[] buffer = new char[WriteBytesInputValue.Text.Length];
-                WriteBytesInputValue.Text.CopyTo(0, buffer, 0, WriteBytesInputValue.Text.Length);
+                string WriteBytesInputText = WriteBytesInputValue.Text + "\n";
+                char[] buffer = new char[WriteBytesInputText.Length];
+                WriteBytesInputText.CopyTo(0, buffer, 0, WriteBytesInputText.Length);
                 String InputString = new string(buffer);
                 DataWriteObject.WriteString(InputString);
-                WriteBytesInputValue.Text = "";
+                //WriteBytesInputValue.Text = "";
 
                 // Don't start any IO if we canceled the task
                 lock (WriteCancelLock)
@@ -344,11 +351,11 @@ namespace CustomSerialDeviceAccess
                 UInt32 bytesWritten = await storeAsyncTask;
                 if (bytesWritten > 0)
                 {
-                    WriteBytesTextBlock.Text += InputString.Substring(0, (int)bytesWritten) + '\n';
+                    WriteBytesTextBlock.Text += ">>> " + InputString.Substring(0, (int)bytesWritten);
                     WriteBytesCounter += bytesWritten;
                     UpdateWriteBytesCounterView();
                 }
-                rootPage.NotifyUser("Write completed - " + bytesWritten.ToString() + " bytes written", NotifyType.StatusMessage);
+                rootPage.NotifyUser("Write completed", NotifyType.StatusMessage);
             }
             else
             {
@@ -541,6 +548,11 @@ namespace CustomSerialDeviceAccess
             {
                 WriteBytesInputValue.Text = "";
             }
+        }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            WriteBytesTextBlock.Text = "";
         }
     }
 }

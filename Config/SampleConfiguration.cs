@@ -24,8 +24,8 @@ namespace SDKTemplate
         {
             new Scenario() { Title="Connection", ClassType=typeof(Scenario1_ConnectDisconnect)},
             new Scenario() { Title="Terminal", ClassType=typeof(Scenario3_ReadWrite)},
-            new Scenario() { Title="Configuration", ClassType=typeof(Scenario2_ConfigureDevice)},
-            new Scenario() { Title="Events", ClassType=typeof(Scenario4_Events)}
+            new Scenario() { Title="Configuration", ClassType=typeof(Scenario2_ConfigureDevice)}
+            //new Scenario() { Title="Events", ClassType=typeof(Scenario4_Events)}
         };
     }
 
